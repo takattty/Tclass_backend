@@ -1,0 +1,21 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  text_id: 1
+  card_title: MyString
+  text_name: MyString
+  text_file: 
+  text_tipe: MyString
+  text_date: 2020-09-13
+  text_times: 1
+  lesson_id: 1
+
+two:
+  text_id: 1
+  card_title: MyString
+  text_name: MyString
+  text_file: 
+  text_tipe: MyString
+  text_date: 2020-09-13
+  text_times: 1
+  lesson_id: 1
