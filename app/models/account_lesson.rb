@@ -1,0 +1,2 @@
+class AccountLesson < ApplicationRecord
+end
