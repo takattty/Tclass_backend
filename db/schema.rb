@@ -10,13 +10,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_09_13_054941) do
+ActiveRecord::Schema.define(version: 2020_09_13_083438) do
 
   create_table "accounts", primary_key: "user_id", id: :integer, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.string "user_name", null: false
     t.string "mail_address", null: false
     t.text "password", null: false
     t.string "account_status", null: false
+  end
+
+  create_table "lessons", primary_key: "lesson_id", id: :integer, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci", force: :cascade do |t|
+    t.string "lesson_name", null: false
+    t.date "lesson_date", null: false
+    t.integer "user_id", null: false
   end
 
 end
