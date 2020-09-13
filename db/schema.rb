@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_09_13_090301) do
+ActiveRecord::Schema.define(version: 2020_09_13_131846) do
 
   create_table "account_lessons", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.integer "user_id", null: false
@@ -40,14 +40,14 @@ ActiveRecord::Schema.define(version: 2020_09_13_090301) do
     t.integer "user_id", null: false
   end
 
-  create_table "reports", primary_key: "task_id", id: :integer, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci", force: :cascade do |t|
-    t.string "task_name", null: false
-    t.binary "task_file", null: false
-    t.date "task_date", null: false
+  create_table "reports", primary_key: "report_id", id: :integer, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci", force: :cascade do |t|
+    t.string "report_name", null: false
+    t.binary "report_file", null: false
+    t.date "report_date", null: false
     t.integer "lesson_id", null: false
   end
 
-  create_table "tasks", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci", force: :cascade do |t|
+  create_table "tasks", primary_key: "report_id", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.integer "lesson_id", null: false
     t.integer "task_id", null: false
     t.integer "user_id", null: false
