@@ -11,11 +11,11 @@ Rails.application.routes.draw do
         post '/user', to:'users#create'
       end
 
-      resources :lesson, only: [:show, :create] do # lesson/:lessonid
-        resources :report, only: [:index, :update] # lesson/:lessonid/report OK!!!!!
-        resources :attendance, only: [:index, :create, :update] # lesson/:lessonid/attendance OK!!!!
-        resources :text, only: [:show] # lesson/:lessonid/text/:textid OK!!!
-        resources :task, only: [:create, :show] # lesson/:lessonid/task/:taskid  showはOK createは微妙。
+      resources :lesson, only: [:show, :create] do
+        resources :report, only: [:index, :update]
+        resources :attendance, only: [:index, :create, :update]
+        resources :text, only: [:show]
+        resources :task, only: [:create, :show]
       end
 
     end
