@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_09_13_084931) do
+ActiveRecord::Schema.define(version: 2020_09_13_085332) do
 
   create_table "account_lessons", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.integer "user_id", null: false
@@ -30,6 +30,13 @@ ActiveRecord::Schema.define(version: 2020_09_13_084931) do
     t.string "lesson_name", null: false
     t.date "lesson_date", null: false
     t.integer "user_id", null: false
+  end
+
+  create_table "reports", primary_key: "task_id", id: :integer, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci", force: :cascade do |t|
+    t.string "task_name", null: false
+    t.binary "task_file", null: false
+    t.date "task_date", null: false
+    t.integer "lesson_id", null: false
   end
 
   create_table "texts", primary_key: "text_id", id: :integer, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci", force: :cascade do |t|
