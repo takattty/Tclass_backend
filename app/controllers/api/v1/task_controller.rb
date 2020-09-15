@@ -25,7 +25,7 @@ class Api::V1::TaskController < ApplicationController
   end
 
   def set_task
-    params.require(:task).permit(:lesson_id, :report_id, :user_id, :submitted_file, :submitted_date, :correction_file, :comment, :score)
+    params.require(:task_create).permit(:lesson_id, :report_id, :user_id, :submitted_file, :submitted_date, :correction_file, :comment, :score)
   end
 
 end

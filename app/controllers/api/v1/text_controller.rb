@@ -13,7 +13,7 @@ class Api::V1::TextController < ApplicationController
     if @text.update(set_text)
       render json: { status: 'SUCCESS', message: 'Updated the post', data: @text }
     else
-      render json: { status: 'SUCCESS', message: 'Not updated', data: @text.errors }
+      render json: { status: 'ERROR', message: 'Not updated', data: @text.errors }
     end
   end
 
@@ -25,7 +25,7 @@ class Api::V1::TextController < ApplicationController
   end
 
   def set_text
-    params.require(:text).permit(:text_id, :text_times)
+    params.require(:text_times_update).permit(:text_id, :text_times)
   end
 
 end
