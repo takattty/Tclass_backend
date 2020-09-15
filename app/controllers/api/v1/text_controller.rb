@@ -1,5 +1,5 @@
 class Api::V1::TextController < ApplicationController
-  before_action :get_textid, only: [:show, :update]
+  before_action :get_id, only: [:show, :update]
   before_action :set_text, only: [:update]
 
 
@@ -19,13 +19,13 @@ class Api::V1::TextController < ApplicationController
 
   private
 
-  def get_textid
+  def get_id
     @lesson_id = params[:lesson_id]
     @text_id = params[:id]
   end
 
   def set_text
-    @change_text = params.require(:text).permit(:text_id, :text_times)
+    params.require(:text).permit(:text_id, :text_times)
   end
 
 end

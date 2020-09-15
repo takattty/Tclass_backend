@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_09_15_024558) do
+ActiveRecord::Schema.define(version: 2020_09_15_071655) do
 
   create_table "accounts", primary_key: "user_id", id: :integer, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.string "user_name", null: false
@@ -46,7 +46,7 @@ ActiveRecord::Schema.define(version: 2020_09_15_024558) do
     t.integer "report_id", null: false
     t.integer "user_id", null: false
     t.binary "submitted_file", null: false
-    t.date "submitted_date", null: false
+    t.datetime "submitted_date", null: false
     t.binary "correction_file"
     t.text "comment"
     t.string "score"
