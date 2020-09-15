@@ -10,20 +10,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_09_13_132906) do
-
-  create_table "account_lessons", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci", force: :cascade do |t|
-    t.integer "user_id", null: false
-    t.string "lesson_lists"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-  end
+ActiveRecord::Schema.define(version: 2020_09_15_024558) do
 
   create_table "accounts", primary_key: "user_id", id: :integer, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.string "user_name", null: false
     t.string "mail_address", null: false
     t.text "password", null: false
     t.string "account_status", null: false
+    t.string "lesson_lists"
   end
 
   create_table "attendances", primary_key: "attendance_id", id: :integer, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci", force: :cascade do |t|
@@ -36,14 +30,14 @@ ActiveRecord::Schema.define(version: 2020_09_13_132906) do
 
   create_table "lessons", primary_key: "lesson_id", id: :integer, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.string "lesson_name", null: false
-    t.date "lesson_date", null: false
+    t.datetime "lesson_date", null: false
     t.integer "user_id", null: false
   end
 
   create_table "reports", primary_key: "report_id", id: :integer, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.string "report_name", null: false
     t.binary "report_file", null: false
-    t.date "report_date", null: false
+    t.string "report_date", null: false
     t.integer "lesson_id", null: false
   end
 
@@ -62,8 +56,8 @@ ActiveRecord::Schema.define(version: 2020_09_13_132906) do
     t.string "card_title", null: false
     t.string "text_name", null: false
     t.binary "text_file", null: false
-    t.string "text_tipe", null: false
-    t.date "text_date", null: false
+    t.string "text_type", null: false
+    t.string "text_date", null: false
     t.integer "text_times", null: false
     t.integer "lesson_id", null: false
   end
