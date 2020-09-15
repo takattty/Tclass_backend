@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   namespace 'api' do
     namespace 'v1' do
       resources :calendar, only: [:show]
-      resources :reportindex, only: [:index]
+      resources :reportindex, only: [:show]
 
       scope '/auth' do
         post '/login', to:'user_token#create'

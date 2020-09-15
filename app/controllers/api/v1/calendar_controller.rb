@@ -10,8 +10,8 @@ class Api::V1::CalendarController < ApplicationController
 
     lessons_array.each do |each_lesson_id|
       lesson_id = each_lesson_id.to_i
-      @lesson = lesson_hash.merge!(each_lesson_id => Lesson.find(lesson_id))
-      @report = report_hash.merge!(each_lesson_id => Report.find(lesson_id))
+      @lesson = lesson_hash.merge!(each_lesson_id => Lesson.where("lesson_id = ?", lesson_id))
+      @report = report_hash.merge!(each_lesson_id => Report.where("lesson_id = ?", lesson_id))
     end
     render json: { title: "It is calendar controller", calendar: { user_id: @user_id, lesson: @lesson, report: @report } }
   end
