@@ -1,5 +1,5 @@
 class Api::V1::CalendarController < ApplicationController
-  before_action :get_userid, :get_userid
+  before_action :get_userid
 
   def show
     lessons = Account.find(@user_id)

@@ -14,7 +14,7 @@ Rails.application.routes.draw do
       resources :lesson, only: [:show, :create] do
         resources :report, only: [:index, :update]
         resources :attendance, only: [:index, :create, :update]
-        resources :text, only: [:show]
+        resources :text, only: [:show, :update]
         resources :task, only: [:create, :show]
       end
 
