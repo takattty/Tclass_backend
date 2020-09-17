@@ -180,3 +180,20 @@
 #     { schedule_id: schedule_id, schedule_date: schedule_date, lesson_id: lesson_id }
 #   )
 # end
+
+# [
+#   [1, 1, 1, "file: File.open('../public/images/b561efa25c76d2d5_copy.pdf')", "2020-09-01", "", "", ""],
+#   [2, 2, 1, "file: File.open('../public/images/b561efa25c76d2d5_copy.pdf')", "2020-09-02", "", "", ""],
+#   [3, 3, 1, "file: File.open('../public/images/b561efa25c76d2d5_copy.pdf')", "2020-09-03", "", "", ""],
+#   [4, 4, 1, "file: File.open('../public/images/b561efa25c76d2d5_copy.pdf')", "2020-09-04", "", "", ""],
+#   [5, 5, 1, "file: File.open('../public/images/b561efa25c76d2d5_copy.pdf')", "2020-09-05", "", "", ""],
+#   [6, 6, 1, "file: File.open('../public/images/b561efa25c76d2d5_copy.pdf')", "2020-09-06", "", "", ""],
+#   [7, 7, 1, "file: File.open('../public/images/b561efa25c76d2d5_copy.pdf')", "2020-09-07", "", "", ""],
+#   [8, 8, 1, "file: File.open('../public/images/b561efa25c76d2d5_copy.pdf')", "2020-09-08", "", "", ""],
+#   [9, 9, 1, "file: File.open('../public/images/b561efa25c76d2d5_copy.pdf')", "2020-09-09", "", "", ""],
+#   [10, 10, 1, "file: File.open('../public/images/b561efa25c76d2d5_copy.pdf')", "2020-09-10", "", "", ""]
+# ].each do |lesson_id, report_id, user_id, submitted_file, submitted_date, correction_file, comment, score|
+#   Task.create(
+#     { lesson_id: lesson_id, report_id: report_id, user_id: user_id, submitted_file: submitted_file, submitted_date: submitted_date, correction_file: correction_file, comment: comment, score: score }
+#   )
+# end

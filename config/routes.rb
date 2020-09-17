@@ -6,9 +6,9 @@ Rails.application.routes.draw do
       resources :reportindex, only: [:show]
 
       scope '/auth' do
-        post '/login', to:'user_token#create'
-        get '/user', to:'users#show'
-        post '/user', to:'users#create'
+        post '/login', to:'account_token#create'
+        get '/account', to:'account#show'
+        post '/account', to:'account#create'
       end
 
       resources :lesson, only: [:show, :create] do
