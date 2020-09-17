@@ -4,16 +4,16 @@ class Api::V1::ReportController < ApplicationController
 
   def index
     @report = Task.where("lesson_id = ?", @lesson_id)
-    render json: { lesson_id: @lesson_id, text_content: @report }
+    render json: { status: "SUCCESS", report_data: { lesson_id: @lesson_id, text_content: @report } }
   end
 
   def update
     @report_id = params[:id]
     @report = Task.find(@report_id)
     if @report.update(set_report)
-      render json: { status: 'SUCCESS', message: 'Updated the post', data: @report }
+      render json: { status: "SUCCESS", message: "Updated the post", data: @report }
     else
-      render json: { status: 'ERROR', message: 'Not updated', data: @report.errors }
+      render json: { status: "ERROR", message: "Not updated", data: @report.errors }
     end
 
   end

@@ -4,7 +4,7 @@ class Api::V1::LessonController < ApplicationController
 
   def show
     @text = Text.where("lesson_id = ?", @lesson_id)
-    render json: { lesson_id: @lesson_id, text_content: @text }
+    render json: { status: "SUCCESS", text_data: { lesson_id: @lesson_id, text_content: @text} }
   end
 
   def create
@@ -14,9 +14,9 @@ class Api::V1::LessonController < ApplicationController
     if text_type == "資料"
       text = Text.new(set_lesson)
       if text.save
-        render json: { status: 'SUCCESS', data: text }
+        render json: { status: "SUCCESS", data: text }
       else
-        render json: { status: 'ERROR', data: text.errors }
+        render json: { status: "ERROR", data: text.errors }
       end
 
     elsif text_type == "レポート"
@@ -24,9 +24,9 @@ class Api::V1::LessonController < ApplicationController
       report_result_hash = {}
       text = Text.new(set_lesson)
       if text.save
-        @text_result = text_result_hash.merge( status: "SUCCESS", data: text )
+        @text_result = text_result_hash.merge!( status: "SUCCESS", data: text )
       else
-        @text_result = text_result_hash.merge( status: "ERROR", data: text.errors )
+        @text_result = text_result_hash.merge!( status: "ERROR", data: text.errors )
       end
 
       created_report = 
@@ -39,11 +39,11 @@ class Api::V1::LessonController < ApplicationController
       }
       report = Report.new(created_report)
       if report.save
-        @report_result = report_result_hash.merge( status: "SUCCESS", data: report )
+        @report_result = report_result_hash.merge!( status: "SUCCESS", data: report )
       else
-        @report_result = report_result_hash.merge( status: "ERROR", data: report.errors )
+        @report_result = report_result_hash.merge!( status: "ERROR", data: report.errors )
       end
-      render json: { "lesson_create": { text_result: @text_result, report_result: @report_result }}
+      render json: { status: "SUCCESS", lesson_create: { text_result: @text_result, report_result: @report_result }}
     end
   end
 

@@ -11,7 +11,7 @@ class Api::V1::ReportindexController < ApplicationController
       lesson_id = each_lesson_id.to_i
       @report = report_hash.merge!( each_lesson_id => Report.where("lesson_id = ?", lesson_id))
     end
-    render json: { status: "SUCCESS", title: "It is report Index controller", calendar: { user_id: @user_id, report: @report } }
+    render json: { status: "SUCCESS", calendar: { user_id: @user_id, report: @report } }
   end
 
 

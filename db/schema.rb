@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_09_15_071655) do
+ActiveRecord::Schema.define(version: 2020_09_17_013109) do
 
   create_table "accounts", primary_key: "user_id", id: :integer, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.string "user_name", null: false
@@ -23,22 +23,32 @@ ActiveRecord::Schema.define(version: 2020_09_15_071655) do
   create_table "attendances", primary_key: "attendance_id", id: :integer, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.string "attendance_name", null: false
     t.integer "limit", null: false
-    t.text "usage_period", null: false
     t.string "state"
+    t.integer "lesson_id", null: false
+    t.datetime "attend_start_date", null: false
+    t.datetime "attend_finish_date", null: false
+    t.datetime "late_start_date", null: false
+    t.datetime "late_finish_date", null: false
+    t.datetime "absence_start_date", null: false
+  end
+
+  create_table "lesson_schedules", primary_key: "schedule_id", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci", force: :cascade do |t|
+    t.datetime "schedule_date", null: false
     t.integer "lesson_id", null: false
   end
 
   create_table "lessons", primary_key: "lesson_id", id: :integer, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.string "lesson_name", null: false
-    t.datetime "lesson_date", null: false
     t.integer "user_id", null: false
+    t.string "schedule_lists"
   end
 
   create_table "reports", primary_key: "report_id", id: :integer, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.string "report_name", null: false
     t.binary "report_file", null: false
-    t.string "report_date", null: false
     t.integer "lesson_id", null: false
+    t.datetime "report_start_date", null: false
+    t.datetime "report_finish_date", null: false
   end
 
   create_table "tasks", primary_key: "task_id", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci", force: :cascade do |t|
@@ -57,9 +67,10 @@ ActiveRecord::Schema.define(version: 2020_09_15_071655) do
     t.string "text_name", null: false
     t.binary "text_file", null: false
     t.string "text_type", null: false
-    t.string "text_date", null: false
     t.integer "text_times", null: false
     t.integer "lesson_id", null: false
+    t.datetime "text_start_date"
+    t.datetime "text_finish_date"
   end
 
 end

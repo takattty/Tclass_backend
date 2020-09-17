@@ -4,15 +4,15 @@ class Api::V1::TaskController < ApplicationController
 
   def show
     @task = Report.where("report_id = ? AND lesson_id = ?", @report_id, @lesson_id)
-    render json: { lesson_id: @lesson_id, task_content: @task }
+    render json: { status: "SUCCESS", task_data: { lesson_id: @lesson_id, task_content: @task } }
   end
 
   def create
     task = Task.new(set_task)
     if task.save
-      render json: { status: 'SUCCESS', data: task }
+      render json: { status: "SUCCESS", data: task }
     else
-      render json: { status: 'ERROR', data: task.errors }
+      render json: { status: "ERROR", data: task.errors }
     end
 
   end

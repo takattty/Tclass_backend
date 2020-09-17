@@ -11,18 +11,18 @@ class Api::V1::AttendanceController < ApplicationController
   def create
     attendance = Attendance.new(set_attendance)
     if attendance.save
-      render json: { status: 'SUCCESS', data: attendance }
+      render json: { status: "SUCCESS", data: attendance }
     else
-      render json: { status: 'ERROR', data: attendance.errors }
+      render json: { status: "ERROR", data: attendance.errors }
     end
   end
 
   def update
     attendance = Attendance.find(@attendance_id)
     if attendance.update(update_attendance)
-      render json: { status: 'SUCCESS', message: 'Updated the post', data: attendance }
+      render json: { status: "SUCCESS", message: "Updated the post", data: attendance }
     else
-      render json: { status: 'ERROR', message: 'Not updated', data: attendance.errors }
+      render json: { status: "ERROR", message: "Not updated", data: attendance.errors }
     end
   end
 

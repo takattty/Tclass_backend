@@ -5,15 +5,15 @@ class Api::V1::TextController < ApplicationController
 
   def show
     @text = Text.find(@text_id)
-    render json: { lesson_id: @lesson_id, text_content: @text }
+    render json: { status: "SUCCESS", text_tada: { lesson_id: @lesson_id, text_content: @text } }
   end
   
   def update
     @text = Text.find(@text_id)
     if @text.update(set_text)
-      render json: { status: 'SUCCESS', message: 'Updated the post', data: @text }
+      render json: { status: "SUCCESS", message: "Updated the post", data: @text }
     else
-      render json: { status: 'ERROR', message: 'Not updated', data: @text.errors }
+      render json: { status: "ERROR", message: "Not updated", data: @text.errors }
     end
   end
 
