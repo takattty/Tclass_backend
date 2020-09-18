@@ -7,23 +7,23 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 # [
-#   [1,"taka1","taka1@mail.com","password1","student", [1,6,11] ],
-#   [2,"taka2","taka2@mail.com","password2","student", [2,3,7,12] ],
-#   [3,"taka3","taka3@mail.com","password3","student", [6,7,8,9,10] ],
-#   [4,"taka4","taka4@mail.com","password4","student", [1,6,11] ],
-#   [5,"taka5","taka5@mail.com","password5","student", [2,3,7,12] ],
-#   [6,"taka6","taka6@mail.com","password6","student", [1,6,11] ],
-#   [7,"taka7","taka7@mail.com","password7","student", [6,7,8,9,10] ],
-#   [8,"taka8","taka8@mail.com","password8","student", [6,7,8,9,10] ],
-#   [9,"taka9","taka9@mail.com","password9","student", [4,9] ],
-#   [10,"taka10","taka10@mail.com","password10","student", [1,6,11] ],
-#   [11,"taka11","taka11@mail.com","password11","student", [2,3,7,12] ],
-#   [12,"taka12","taka12@mail.com","password12","student", [2,3,7,12] ],
-#   [13,"taka13","taka13@mail.com","password13","student", [4,9] ],
-#   [14,"taka14","taka14@mail.com","password14","student", [4,9] ],
-# ].each do |user_id, user_name, mail_address, password, account_status, lesson_lists|
+#   [1,"taka1","taka1@mail.com","student", [1,6,11], "password1","password1"],
+#   [2,"taka2","taka2@mail.com","student", [2,3,7,12], "password2","password2"],
+#   [3,"taka3","taka3@mail.com","student", [6,7,8,9,10], "password3","password3"],
+#   [4,"taka4","taka4@mail.com","student", [1,6,11], "password4","password4"],
+#   [5,"taka5","taka5@mail.com","student", [2,3,7,12], "password5","password5"],
+#   [6,"taka6","taka6@mail.com","student", [1,6,11], "password6","password6"],
+#   [7,"taka7","taka7@mail.com","student", [6,7,8,9,10], "password7","password7"],
+#   [8,"taka8","taka8@mail.com","student", [6,7,8,9,10], "password8","password8"],
+#   [9,"taka9","taka9@mail.com","student", [4,9], "password9","password9"],
+#   [10,"taka10","taka10@mail.com","student", [1,6,11], "password10","password10"],
+#   [11,"taka11","taka11@mail.com","student", [2,3,7,12], "password11","password11"],
+#   [12,"taka12","taka12@mail.com","student", [2,3,7,12], "password12","password12"],
+#   [13,"taka13","taka13@mail.com","student", [4,9], "password13","password13"],
+#   [14,"taka14","taka14@mail.com","student", [4,9], "password14","password14"],
+# ].each do |user_id, user_name, mail_address, account_status, lesson_lists, password, password_confirmation|
 #   Account.create(
-#     { user_id:user_id, user_name:user_name, mail_address:mail_address, password:password, account_status:account_status, lesson_lists:lesson_lists }
+#     { user_id: user_id, user_name: user_name, mail_address: mail_address, account_status: account_status, lesson_lists: lesson_lists, password: password, password_confirmation: password_confirmation }
 #   )
 # end
 
