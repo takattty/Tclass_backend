@@ -8,7 +8,7 @@ Rails.application.routes.draw do
 
       scope '/auth' do
         post '/login', to:'account_token#create'
-        get '/account/:id', to:'account#show'
+        get '/account', to:'account#show'
         post '/account', to:'account#create'
       end
 
