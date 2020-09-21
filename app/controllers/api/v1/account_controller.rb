@@ -1,8 +1,9 @@
 class Api::V1::AccountController < ApplicationController
   before_action :get_account_id, only: [:show]
+  before_action :get_emal, only: [:index]
   before_action :set_account, only: [:create]
 
-  def show
+  def index
     # p request.headers.sort.map { |k, v| logger.info "#{k}:#{v}" }
     # requests = request.headers
     # p requests.class
@@ -12,7 +13,12 @@ class Api::V1::AccountController < ApplicationController
     # # p user_info_hash.class
     # # p user_info
     @account = Account.where('email = ?', @user_email).to_a
-    render json: { status: "200", data: @account }
+    render json: { status: 200, data: @account }
+  end
+
+  def show
+    account = Account.find(@account_id)
+    render json: { status: 200, data: account }
   end
 
   def create
@@ -26,8 +32,12 @@ class Api::V1::AccountController < ApplicationController
 
   private
 
-  def get_account_id
+  def get_email
     @user_email = params[:email]
+  end
+
+  def get_account_id
+    @account_id = params[:id]
   end
   
   def set_account
