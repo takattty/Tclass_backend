@@ -21,32 +21,32 @@
 #   [12,"taka12","taka12@mail.com","student", [2,3,7,12], "password12","password12"],
 #   [13,"taka13","taka13@mail.com","student", [4,9], "password13","password13"],
 #   [14,"taka14","taka14@mail.com","student", [4,9], "password14","password14"],
-# ].each do |user_id, user_name, mail_address, account_status, lesson_lists, password, password_confirmation|
+# ].each do |user_id, user_name, email, account_status, lesson_lists, password, password_confirmation|
 #   Account.create(
-#     { user_id: user_id, user_name: user_name, mail_address: mail_address, account_status: account_status, lesson_lists: lesson_lists, password: password, password_confirmation: password_confirmation }
+#     { user_id: user_id, user_name: user_name, email: email, account_status: account_status, lesson_lists: lesson_lists, password: password, password_confirmation: password_confirmation }
 #   )
 # end
 
 # [
-#   [15,"tomi15","tomi15@mail.com", "password15tomi","teacher", [1] ],
-#   [16,"tomi16","tomi16@mail.com", "password16tomi","teacher", [2] ],
-#   [17,"tomi17","tomi17@mail.com", "password17tomi","teacher", [3] ],
-#   [18,"tomi18","tomi18@mail.com", "password18tomi","teacher", [4] ],
-#   [19,"tomi19","tomi19@mail.com", "password19tomi","teacher", [5] ],
-#   [20,"tomi20","tomi20@mail.com", "password20tomi","teacher", [6] ],
-#   [21,"tomi21","tomi21@mail.com", "password21tomi","teacher", [7] ],
-#   [22,"tomi22","tomi22@mail.com", "password22tomi","teacher", [8] ],
-#   [23,"tomi23","tomi23@mail.com", "password23tomi","teacher", [9] ],
-#   [24,"tomi24","tomi24@mail.com", "password24tomi","teacher", [10] ],
-#   [25,"tomi25","tomi25@mail.com", "password25tomi","teacher", [11] ],
-#   [26,"tomi26","tomi26@mail.com", "password26tomi","teacher", [12] ],
-#   [27,"tomi27","tomi27@mail.com", "password27tomi","teacher", [] ],
-#   [28,"tomi28","tomi28@mail.com", "password28tomi","teacher", [] ],
-#   [29,"tomi29","tomi29@mail.com", "password29tomi","teacher", [] ],
-#   [30,"tomi30","tomi30@mail.com", "password30tomi","teacher", [] ]
-# ].each do |user_id, user_name, mail_address, password, account_status, lesson_lists|
+#   [15,"tomi15","tomi15@mail.com", "teacher", [1], "password15tomi", "password15tomi"],
+#   [16,"tomi16","tomi16@mail.com", "teacher", [2], "password16tomi", "password16tomi"],
+#   [17,"tomi17","tomi17@mail.com", "teacher", [3], "password17tomi", "password17tomi"],
+#   [18,"tomi18","tomi18@mail.com", "teacher", [4], "password18tomi", "password18tomi"],
+#   [19,"tomi19","tomi19@mail.com", "teacher", [5], "password19tomi", "password19tomi"],
+#   [20,"tomi20","tomi20@mail.com", "teacher", [6], "password20tomi", "password20tomi"],
+#   [21,"tomi21","tomi21@mail.com", "teacher", [7], "password21tomi", "password21tomi"],
+#   [22,"tomi22","tomi22@mail.com", "teacher", [8], "password22tomi", "password22tomi"],
+#   [23,"tomi23","tomi23@mail.com", "teacher", [9], "password23tomi", "password23tomi"],
+#   [24,"tomi24","tomi24@mail.com", "teacher", [10], "password24tomi", "password24tomi"],
+#   [25,"tomi25","tomi25@mail.com", "teacher", [11], "password25tomi", "password25tomi"],
+#   [26,"tomi26","tomi26@mail.com", "teacher", [12], "password26tomi", "password26tomi"],
+#   [27,"tomi27","tomi27@mail.com", "teacher", [], "password27tomi", "password27tomi"],
+#   [28,"tomi28","tomi28@mail.com", "teacher", [], "password28tomi", "password28tomi"],
+#   [29,"tomi29","tomi29@mail.com", "teacher", [], "password29tomi", "password29tomi"],
+#   [30,"tomi30","tomi30@mail.com", "teacher", [], "password30tomi", "password30tomi"] 
+# ].each do |user_id, user_name, email, account_status, lesson_lists, password, password_confirmation|
 #   Account.create(
-#     { user_id:user_id, user_name:user_name, mail_address:mail_address, password:password, account_status:account_status, lesson_lists:lesson_lists }
+#     { user_id:user_id, user_name:user_name, email:email, account_status:account_status, lesson_lists:lesson_lists, password:password,  password_confirmation:password_confirmation }
 #   )
 # end
 
@@ -153,31 +153,31 @@
 # end
 
 # [
-#   [1, "2020-09-01 10:30:00", 1],
-#   [2, "2020-09-08 10:30:00", 1],
-#   [3, "2020-09-15 10:30:00", 1],
-#   [4, "2020-09-22 10:30:00", 1],
-#   [5, "2020-09-29 10:30:00", 1],
-#   [6, "2020-10-06 10:30:00", 1],
-#   [7, "2020-10-13 10:30:00", 1],
-#   [8, "2020-10-20 10:30:00", 1],
-#   [9, "2020-10-27 10:30:00", 1],
-#   [10, "2020-11-03 10:30:00", 1],
-#   [11, "2020-11-10 10:30:00", 1],
-#   [12, "2020-09-01 12:50:00", 2],
-#   [13, "2020-09-08 12:50:00", 2],
-#   [14, "2020-09-15 12:50:00", 2],
-#   [15, "2020-09-22 12:50:00", 2],
-#   [16, "2020-09-29 12:50:00", 2],
-#   [17, "2020-10-06 12:50:00", 2],
-#   [18, "2020-10-13 12:50:00", 2],
-#   [19, "2020-10-20 12:50:00", 2],
-#   [20, "2020-10-27 12:50:00", 2],
-#   [21, "2020-11-03 12:50:00", 2],
-#   [22, "2020-11-10 12:50:00", 2],
-# ].each do |schedule_id, schedule_date, lesson_id|
+#   [1, "2020-09-01 10:30:00", 1, "2020-09-01 12:00:00"],
+#   [2, "2020-09-08 10:30:00", 1, "2020-09-08 12:00:00"],
+#   [3, "2020-09-15 10:30:00", 1, "2020-09-15 12:00:00"],
+#   [4, "2020-09-22 10:30:00", 1, "2020-09-22 12:00:00"],
+#   [5, "2020-09-29 10:30:00", 1, "2020-09-29 12:00:00"],
+#   [6, "2020-10-06 10:30:00", 1, "2020-10-06 12:00:00"],
+#   [7, "2020-10-13 10:30:00", 1, "2020-10-13 12:00:00"],
+#   [8, "2020-10-20 10:30:00", 1, "2020-10-20 12:00:00"],
+#   [9, "2020-10-27 10:30:00", 1, "2020-10-27 12:00:00"],
+#   [10, "2020-11-03 10:30:00", 1, "2020-11-03 12:00:00"],
+#   [11, "2020-11-10 10:30:00", 1, "2020-11-10 12:00:00"],
+#   [12, "2020-09-01 12:50:00", 2, "2020-09-01 14:20:00"],
+#   [13, "2020-09-08 12:50:00", 2, "2020-09-08 14:20:00"],
+#   [14, "2020-09-15 12:50:00", 2, "2020-09-15 14:20:00"],
+#   [15, "2020-09-22 12:50:00", 2, "2020-09-22 14:20:00"],
+#   [16, "2020-09-29 12:50:00", 2, "2020-09-29 14:20:00"],
+#   [17, "2020-10-06 12:50:00", 2, "2020-10-06 14:20:00"],
+#   [18, "2020-10-13 12:50:00", 2, "2020-10-13 14:20:00"],
+#   [19, "2020-10-20 12:50:00", 2, "2020-10-20 14:20:00"],
+#   [20, "2020-10-27 12:50:00", 2, "2020-10-27 14:20:00"],
+#   [21, "2020-11-03 12:50:00", 2, "2020-11-03 14:20:00"],
+#   [22, "2020-11-10 12:50:00", 2, "2020-11-10 14:20:00"],
+# ].each do |schedule_id, schedule_start_date, lesson_id, schedule_finish_date|
 #   LessonSchedule.create(
-#     { schedule_id: schedule_id, schedule_date: schedule_date, lesson_id: lesson_id }
+#     { schedule_id: schedule_id, schedule_start_date: schedule_start_date, lesson_id: lesson_id, schedule_finish_date: schedule_finish_date }
 #   )
 # end
 

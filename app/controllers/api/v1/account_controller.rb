@@ -1,6 +1,6 @@
 class Api::V1::AccountController < ApplicationController
   before_action :get_account_id, only: [:show]
-  before_action :get_emal, only: [:index]
+  before_action :get_email, only: [:index]
   before_action :set_account, only: [:create]
 
   def index
