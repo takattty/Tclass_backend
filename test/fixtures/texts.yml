@@ -1,0 +1,17 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  card_title: MyString
+  name: MyString
+  type: 
+  start_date: 2021-03-13 15:41:47
+  finish_date: 2021-03-13 15:41:47
+  times: 1
+
+two:
+  card_title: MyString
+  name: MyString
+  type: 
+  start_date: 2021-03-13 15:41:47
+  finish_date: 2021-03-13 15:41:47
+  times: 1
