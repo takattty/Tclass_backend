@@ -1,2 +1,0 @@
-class LessonSchedule < ApplicationRecord
-end
