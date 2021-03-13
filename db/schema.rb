@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_03_13_154731) do
+ActiveRecord::Schema.define(version: 2021_03_13_155049) do
 
   create_table "account_lessons", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.bigint "account_id", null: false
@@ -52,6 +52,20 @@ ActiveRecord::Schema.define(version: 2021_03_13_154731) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["lesson_id"], name: "index_schedules_on_lesson_id"
+  end
+
+  create_table "tasks", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci", force: :cascade do |t|
+    t.bigint "lesson_id", null: false
+    t.bigint "report_id", null: false
+    t.bigint "account_id", null: false
+    t.time "submitted_data"
+    t.text "comment"
+    t.string "score"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["account_id"], name: "index_tasks_on_account_id"
+    t.index ["lesson_id"], name: "index_tasks_on_lesson_id"
+    t.index ["report_id"], name: "index_tasks_on_report_id"
   end
 
   create_table "texts", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci", force: :cascade do |t|
