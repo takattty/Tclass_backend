@@ -6,68 +6,92 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-# [
-#   [1,"taka1","taka1@mail.com","student", [1,6,11], "password1","password1"],
-#   [2,"taka2","taka2@mail.com","student", [2,3,7,12], "password2","password2"],
-#   [3,"taka3","taka3@mail.com","student", [6,7,8,9,10], "password3","password3"],
-#   [4,"taka4","taka4@mail.com","student", [1,6,11], "password4","password4"],
-#   [5,"taka5","taka5@mail.com","student", [2,3,7,12], "password5","password5"],
-#   [6,"taka6","taka6@mail.com","student", [1,6,11], "password6","password6"],
-#   [7,"taka7","taka7@mail.com","student", [6,7,8,9,10], "password7","password7"],
-#   [8,"taka8","taka8@mail.com","student", [6,7,8,9,10], "password8","password8"],
-#   [9,"taka9","taka9@mail.com","student", [4,9], "password9","password9"],
-#   [10,"taka10","taka10@mail.com","student", [1,6,11], "password10","password10"],
-#   [11,"taka11","taka11@mail.com","student", [2,3,7,12], "password11","password11"],
-#   [12,"taka12","taka12@mail.com","student", [2,3,7,12], "password12","password12"],
-#   [13,"taka13","taka13@mail.com","student", [4,9], "password13","password13"],
-#   [14,"taka14","taka14@mail.com","student", [4,9], "password14","password14"],
-# ].each do |user_id, user_name, email, account_status, lesson_lists, password, password_confirmation|
-#   Account.create(
-#     { user_id: user_id, user_name: user_name, email: email, account_status: account_status, lesson_lists: lesson_lists, password: password, password_confirmation: password_confirmation }
-#   )
-# end
+[
+  ["taka1","taka1@mail.com","password1","password1", "student"],
+  ["taka2","taka2@mail.com","password2","password2", "student"],
+  ["taka3","taka3@mail.com","password3","password3", "student"],
+  ["taka4","taka4@mail.com","password4","password4", "student"],
+  ["taka5","taka5@mail.com","password5","password5", "student"],
+  ["taka6","taka6@mail.com","password6","password6", "student"],
+  ["taka7","taka7@mail.com","password7","password7", "student"],
+  ["taka8","taka8@mail.com","password8","password8", "student"],
+  ["taka9","taka9@mail.com","password9","password9", "student"],
+  ["taka10","taka10@mail.com","password10","password10", "student"],
+  ["taka11","taka11@mail.com","password11","password11", "student"],
+  ["taka12","taka12@mail.com","password12","password12", "student"],
+  ["taka13","taka13@mail.com","password13","password13", "student"],
+  ["taka14","taka14@mail.com","password14","password14", "student"],
+  ["tomi15","tomi15@mail.com","password15tomi","password15tomi","teacher"],
+  ["tomi16","tomi16@mail.com","password16tomi","password16tomi","teacher"],
+  ["tomi17","tomi17@mail.com","password17tomi","password17tomi","teacher"],
+  ["tomi18","tomi18@mail.com","password18tomi","password18tomi","teacher"],
+  ["tomi19","tomi19@mail.com","password19tomi","password19tomi","teacher"],
+  ["tomi20","tomi20@mail.com","password20tomi","password20tomi","teacher"],
+  ["tomi21","tomi21@mail.com","password21tomi","password21tomi","teacher"],
+  ["tomi22","tomi22@mail.com","password22tomi","password22tomi","teacher"],
+  ["tomi23","tomi23@mail.com","password23tomi","password23tomi","teacher"],
+  ["tomi24","tomi24@mail.com","password24tomi","password24tomi","teacher"],
+  ["tomi25","tomi25@mail.com","password25tomi","password25tomi","teacher"],
+  ["tomi26","tomi26@mail.com","password26tomi","password26tomi","teacher"],
+  ["tomi27","tomi27@mail.com","password27tomi","password27tomi","teacher"],
+  ["tomi28","tomi28@mail.com","password28tomi","password28tomi","teacher"],
+  ["tomi29","tomi29@mail.com","password29tomi","password29tomi","teacher"],
+  ["tomi30","tomi30@mail.com","password30tomi","password30tomi","teacher"]
+].each do |user_name, email, account_status, password, password_confirmation, account_status|
+  Account.create(
+    { name: user_name, email: email, pasword_digest: password_digest, account_status: account_status }
+  )
+end
 
-# [
-#   [15,"tomi15","tomi15@mail.com", "teacher", [1], "password15tomi", "password15tomi"],
-#   [16,"tomi16","tomi16@mail.com", "teacher", [2], "password16tomi", "password16tomi"],
-#   [17,"tomi17","tomi17@mail.com", "teacher", [3], "password17tomi", "password17tomi"],
-#   [18,"tomi18","tomi18@mail.com", "teacher", [4], "password18tomi", "password18tomi"],
-#   [19,"tomi19","tomi19@mail.com", "teacher", [5], "password19tomi", "password19tomi"],
-#   [20,"tomi20","tomi20@mail.com", "teacher", [6], "password20tomi", "password20tomi"],
-#   [21,"tomi21","tomi21@mail.com", "teacher", [7], "password21tomi", "password21tomi"],
-#   [22,"tomi22","tomi22@mail.com", "teacher", [8], "password22tomi", "password22tomi"],
-#   [23,"tomi23","tomi23@mail.com", "teacher", [9], "password23tomi", "password23tomi"],
-#   [24,"tomi24","tomi24@mail.com", "teacher", [10], "password24tomi", "password24tomi"],
-#   [25,"tomi25","tomi25@mail.com", "teacher", [11], "password25tomi", "password25tomi"],
-#   [26,"tomi26","tomi26@mail.com", "teacher", [12], "password26tomi", "password26tomi"],
-#   [27,"tomi27","tomi27@mail.com", "teacher", [], "password27tomi", "password27tomi"],
-#   [28,"tomi28","tomi28@mail.com", "teacher", [], "password28tomi", "password28tomi"],
-#   [29,"tomi29","tomi29@mail.com", "teacher", [], "password29tomi", "password29tomi"],
-#   [30,"tomi30","tomi30@mail.com", "teacher", [], "password30tomi", "password30tomi"] 
-# ].each do |user_id, user_name, email, account_status, lesson_lists, password, password_confirmation|
-#   Account.create(
-#     { user_id:user_id, user_name:user_name, email:email, account_status:account_status, lesson_lists:lesson_lists, password:password,  password_confirmation:password_confirmation }
-#   )
-# end
+38.times do |n|
+  Lesson.create( name: "lesson#{n}" )
+end
 
-# [
-#   [1, "lesson1", 15, [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11]],
-#   [2, "lesson2", 16, [12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22]],
-#   [3, "lesson3", 17, []],
-#   [4, "lesson4", 18, []],
-#   [5, "lesson5", 19, []],
-#   [6, "lesson6", 20, []],
-#   [7, "lesson7", 21, []],
-#   [8, "lesson8", 22, []],
-#   [9, "lesson9", 23, []],
-#   [10, "lesson10",  24, []],
-#   [11, "lesson11",  25, []],
-#   [12, "lesson12",  26, []],
-# ].each do |lesson_id, lesson_name, user_id, schedule_lists|
-#   Lesson.create(
-#     { lesson_id: lesson_id, lesson_name: lesson_name, user_id: user_id, schedule_lists: schedule_lists }
-#   )
-# end
+30.times do |n|
+  Account_lesson.create( account_id: n, lesson_id: "#{n+1}" )
+  Account_lesson.create( account_id: n, lesson_id: "#{n+2}" )
+  Account_lesson.create( account_id: n, lesson_id: "#{n+3}" )
+  Account_lesson.create( account_id: n, lesson_id: "#{n+4}" )
+  Account_lesson.create( account_id: n, lesson_id: "#{n+5}" )
+  Account_lesson.create( account_id: n, lesson_id: "#{n+6}" )
+  Account_lesson.create( account_id: n, lesson_id: "#{n+7}" )
+  Account_lesson.create( account_id: n, lesson_id: "#{n+8}" )
+end
+
+Schedule.create( start_date: "2020-03-01 10:30:00", finish_date: "2020-03-01 12:00:00")
+Schedule.create( start_date: "2020-03-08 10:30:00", finish_date: "2020-03-08 12:00:00")
+Schedule.create( start_date: "2020-03-15 10:30:00", finish_date: "2020-03-15 12:00:00")
+Schedule.create( start_date: "2020-03-22 10:30:00", finish_date: "2020-03-22 12:00:00")
+Schedule.create( start_date: "2020-03-29 10:30:00", finish_date: "2020-03-29 12:00:00")
+Schedule.create( start_date: "2020-04-06 10:30:00", finish_date: "2020-04-06 12:00:00")
+Schedule.create( start_date: "2020-04-13 10:30:00", finish_date: "2020-04-13 12:00:00")
+Schedule.create( start_date: "2020-04-20 10:30:00", finish_date: "2020-04-20 12:00:00")
+Schedule.create( start_date: "2020-04-27 10:30:00", finish_date: "2020-04-27 12:00:00")
+Schedule.create( start_date: "2020-05-03 10:30:00", finish_date: "2020-05-03 12:00:00")
+Schedule.create( start_date: "2020-05-10 10:30:00", finish_date: "2020-05-10 12:00:00")
+Schedule.create( start_date: "2020-05-17 10:30:00", finish_date: "2020-05-10 12:00:00")
+Schedule.create( start_date: "2020-05-25 10:30:00", finish_date: "2020-05-10 12:00:00")
+Schedule.create( start_date: "2020-06-01 10:30:00", finish_date: "2020-05-10 12:00:00")
+Schedule.create( start_date: "2020-06-08 10:30:00", finish_date: "2020-05-10 12:00:00")
+
+
+30.times do |n|
+  Lesson_schedule.create( account_id: n, lesson_id: 1 )
+  Lesson_schedule.create( account_id: n, lesson_id: 2 )
+  Lesson_schedule.create( account_id: n, lesson_id: 3 )
+  Lesson_schedule.create( account_id: n, lesson_id: 4 )
+  Lesson_schedule.create( account_id: n, lesson_id: 5 )
+  Lesson_schedule.create( account_id: n, lesson_id: 6 )
+  Lesson_schedule.create( account_id: n, lesson_id: 7 )
+  Lesson_schedule.create( account_id: n, lesson_id: 8 )
+  Lesson_schedule.create( account_id: n, lesson_id: 9 )
+  Lesson_schedule.create( account_id: n, lesson_id: 10 )
+  Lesson_schedule.create( account_id: n, lesson_id: 11 )
+  Lesson_schedule.create( account_id: n, lesson_id: 12 )
+  Lesson_schedule.create( account_id: n, lesson_id: 13 )
+  Lesson_schedule.create( account_id: n, lesson_id: 14 )
+  Lesson_schedule.create( account_id: n, lesson_id: 15 )
+end
 
 
 # [
@@ -169,35 +193,6 @@
 # ].each do |attendance_id, attendance_name, limit, state, lesson_id, attend_start_date, attend_finish_date, late_start_date, late_finish_date, absence_start_date|
 #   Attendance.create(
 #     { attendance_id: attendance_id, attendance_name: attendance_name, limit: limit, state: state, lesson_id: lesson_id, attend_start_date: attend_start_date, attend_finish_date: attend_finish_date, late_start_date: late_start_date, late_finish_date: late_finish_date, absence_start_date: absence_start_date }
-#   )
-# end
-
-# [
-#   [1, "2020-09-01 10:30:00", 1, "2020-09-01 12:00:00"],
-#   [2, "2020-09-08 10:30:00", 1, "2020-09-08 12:00:00"],
-#   [3, "2020-09-15 10:30:00", 1, "2020-09-15 12:00:00"],
-#   [4, "2020-09-22 10:30:00", 1, "2020-09-22 12:00:00"],
-#   [5, "2020-09-29 10:30:00", 1, "2020-09-29 12:00:00"],
-#   [6, "2020-10-06 10:30:00", 1, "2020-10-06 12:00:00"],
-#   [7, "2020-10-13 10:30:00", 1, "2020-10-13 12:00:00"],
-#   [8, "2020-10-20 10:30:00", 1, "2020-10-20 12:00:00"],
-#   [9, "2020-10-27 10:30:00", 1, "2020-10-27 12:00:00"],
-#   [10, "2020-11-03 10:30:00", 1, "2020-11-03 12:00:00"],
-#   [11, "2020-11-10 10:30:00", 1, "2020-11-10 12:00:00"],
-#   [12, "2020-09-01 12:50:00", 2, "2020-09-01 14:20:00"],
-#   [13, "2020-09-08 12:50:00", 2, "2020-09-08 14:20:00"],
-#   [14, "2020-09-15 12:50:00", 2, "2020-09-15 14:20:00"],
-#   [15, "2020-09-22 12:50:00", 2, "2020-09-22 14:20:00"],
-#   [16, "2020-09-29 12:50:00", 2, "2020-09-29 14:20:00"],
-#   [17, "2020-10-06 12:50:00", 2, "2020-10-06 14:20:00"],
-#   [18, "2020-10-13 12:50:00", 2, "2020-10-13 14:20:00"],
-#   [19, "2020-10-20 12:50:00", 2, "2020-10-20 14:20:00"],
-#   [20, "2020-10-27 12:50:00", 2, "2020-10-27 14:20:00"],
-#   [21, "2020-11-03 12:50:00", 2, "2020-11-03 14:20:00"],
-#   [22, "2020-11-10 12:50:00", 2, "2020-11-10 14:20:00"],
-# ].each do |schedule_id, schedule_start_date, lesson_id, schedule_finish_date|
-#   LessonSchedule.create(
-#     { schedule_id: schedule_id, schedule_start_date: schedule_start_date, lesson_id: lesson_id, schedule_finish_date: schedule_finish_date }
 #   )
 # end
 

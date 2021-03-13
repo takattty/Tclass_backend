@@ -1,6 +1,6 @@
 class Attendance < ApplicationRecord
   has_many :lesson_attendance
-  has_many :lesson through: :lesson_attendance
+  has_many :lesson, through: :lesson_attendance
 
   validates :name, presence: true
   validates :limit, presence: true

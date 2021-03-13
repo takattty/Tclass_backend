@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_03_13_160136) do
+ActiveRecord::Schema.define(version: 2021_03_13_170617) do
 
   create_table "account_lessons", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.bigint "account_id", null: false
@@ -52,6 +52,15 @@ ActiveRecord::Schema.define(version: 2021_03_13_160136) do
     t.index ["lesson_id"], name: "index_lesson_attendances_on_lesson_id"
   end
 
+  create_table "lesson_schedules", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci", force: :cascade do |t|
+    t.bigint "lesson_id", null: false
+    t.bigint "schedule_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["lesson_id"], name: "index_lesson_schedules_on_lesson_id"
+    t.index ["schedule_id"], name: "index_lesson_schedules_on_schedule_id"
+  end
+
   create_table "lessons", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.string "name", null: false
     t.datetime "created_at", precision: 6, null: false
@@ -69,11 +78,10 @@ ActiveRecord::Schema.define(version: 2021_03_13_160136) do
   end
 
   create_table "schedules", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci", force: :cascade do |t|
-    t.bigint "lesson_id", null: false
-    t.time "date", null: false
+    t.time "start_date", null: false
+    t.time "finish_date", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["lesson_id"], name: "index_schedules_on_lesson_id"
   end
 
   create_table "tasks", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci", force: :cascade do |t|

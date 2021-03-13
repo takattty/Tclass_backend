@@ -41,6 +41,6 @@ class Api::V1::AccountController < ApplicationController
   end
   
   def set_account
-    params.require(:account_create).permit(:user_name, :email, :account_status, :lesson_lists, :password, :password_confirmation)
+    params.require(:account_create).permit(:name, :email, :password, :password_confirmation, :account_status )
   end
 end
