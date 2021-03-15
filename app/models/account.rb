@@ -1,8 +1,8 @@
 class Account < ApplicationRecord
   has_secure_password
-  has_many :account_lesson
-  has_many :lesson, through: :account_lesson
-  has_many :task
+  has_many :account_lessons
+  has_many :lessons, through: :account_lessons
+  has_many :tasks
 
   validates :name, presence: true
   validates :email, presence: true

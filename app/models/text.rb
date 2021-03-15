@@ -1,4 +1,6 @@
 class Text < ApplicationRecord
+  belongs_to :lesson
+  
   validates :lesson_id, presence: true
   validates :card_title, presence: true
   validates :name, presence: true

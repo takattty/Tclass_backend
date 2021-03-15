@@ -1,4 +1,7 @@
 class LessonSchedule < ApplicationRecord
-  validates :lesson_id, presence: true
-  validates :schedule_id, presence: true
+  belongs_to :lesson
+  belongs_to :schedule
+
+  validates :lesson, presence: true
+  validates :schedule, presence: true
 end

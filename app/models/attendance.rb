@@ -1,4 +1,6 @@
 class Attendance < ApplicationRecord
+  belongs_to :lesson
+
   validates :name, presence: true
   validates :limit, presence: true
   validates :attend_start_date, presence: true

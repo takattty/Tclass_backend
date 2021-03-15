@@ -1,4 +1,7 @@
 class AccountLesson < ApplicationRecord
-  validates :account_id, presence: true
-  validates :lesson_id, presence: true
+  belongs_to :account
+  belongs_to :lesson
+
+  validates :account, presence: true
+  validates :lesson, presence: true
 end
