@@ -4,7 +4,7 @@ class CreateTasks < ActiveRecord::Migration[6.0]
       t.belongs_to :lesson, null: false
       t.belongs_to :report, null: false
       t.belongs_to :account, null: false
-      t.time :submitted_data
+      t.datetime :submitted_data
       t.text :comment
       t.string :score
 

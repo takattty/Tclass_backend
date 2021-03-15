@@ -31,25 +31,18 @@ ActiveRecord::Schema.define(version: 2021_03_13_170617) do
   end
 
   create_table "attendances", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci", force: :cascade do |t|
+    t.bigint "lesson_id", null: false
     t.string "name", null: false
     t.integer "limit", null: false
-    t.time "attend_start_date", null: false
-    t.time "attend_finish_date", null: false
-    t.time "late_start_date", null: false
-    t.time "late_finish_date", null: false
-    t.time "absence_start_date", null: false
+    t.datetime "attend_start_date", null: false
+    t.datetime "attend_finish_date", null: false
+    t.datetime "late_start_date", null: false
+    t.datetime "late_finish_date", null: false
+    t.datetime "absence_start_date", null: false
     t.string "state"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-  end
-
-  create_table "lesson_attendances", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci", force: :cascade do |t|
-    t.bigint "lesson_id", null: false
-    t.bigint "attendance_id", null: false
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-    t.index ["attendance_id"], name: "index_lesson_attendances_on_attendance_id"
-    t.index ["lesson_id"], name: "index_lesson_attendances_on_lesson_id"
+    t.index ["lesson_id"], name: "index_attendances_on_lesson_id"
   end
 
   create_table "lesson_schedules", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci", force: :cascade do |t|
@@ -70,16 +63,16 @@ ActiveRecord::Schema.define(version: 2021_03_13_170617) do
   create_table "reports", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.bigint "lesson_id", null: false
     t.string "name", null: false
-    t.time "start_date", null: false
-    t.time "finish_date", null: false
+    t.datetime "start_date", null: false
+    t.datetime "finish_date", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["lesson_id"], name: "index_reports_on_lesson_id"
   end
 
   create_table "schedules", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci", force: :cascade do |t|
-    t.time "start_date", null: false
-    t.time "finish_date", null: false
+    t.datetime "start_date", null: false
+    t.datetime "finish_date", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
@@ -88,7 +81,7 @@ ActiveRecord::Schema.define(version: 2021_03_13_170617) do
     t.bigint "lesson_id", null: false
     t.bigint "report_id", null: false
     t.bigint "account_id", null: false
-    t.time "submitted_data"
+    t.datetime "submitted_data"
     t.text "comment"
     t.string "score"
     t.datetime "created_at", precision: 6, null: false
@@ -102,10 +95,10 @@ ActiveRecord::Schema.define(version: 2021_03_13_170617) do
     t.bigint "lesson_id", null: false
     t.string "card_title", null: false
     t.string "name", null: false
-    t.string "type", null: false
-    t.time "start_date", null: false
-    t.time "finish_date", null: false
-    t.integer "times", null: false
+    t.string "file_type", null: false
+    t.datetime "start_date", null: false
+    t.datetime "finish_date", null: false
+    t.integer "times"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["lesson_id"], name: "index_texts_on_lesson_id"
