@@ -2,18 +2,17 @@ class Api::V1::TextController < ApplicationController
   before_action :get_id, only: [:show, :update]
   before_action :set_text, only: [:update]
 
-
   def show
-    @text = Text.find(@text_id)
-    render json: { status: "SUCCESS", text_tada: { lesson_id: @lesson_id, text_content: @text } }
+    text = Text.find(@text_id)
+    render json: { status: "SUCCESS", text_data: { lesson_id: @lesson_id, content: text } }
   end
   
   def update
-    @text = Text.find(@text_id)
-    if @text.update(set_text)
-      render json: { status: "SUCCESS", message: "Updated the post", data: @text }
+    text = Text.find(@text_id)
+    if text.update(set_text)
+      render json: { status: "SUCCESS", data: text }
     else
-      render json: { status: "ERROR", message: "Not updated", data: @text.errors }
+      render json: { status: "ERROR", data: text.errors }
     end
   end
 
@@ -25,7 +24,6 @@ class Api::V1::TextController < ApplicationController
   end
 
   def set_text
-    params.require(:text_times_update).permit(:text_id, :text_times)
+    params.require(:text_times_update).permit(:id, :times)
   end
-
 end

@@ -44,5 +44,4 @@ class Api::V1::AttendanceController < ApplicationController
   def update_attendance
     params.require(:attendance_update).permit(:state)
   end
-
 end

@@ -43,5 +43,4 @@ class Api::V1::LessonController < ApplicationController
   def set_lesson
     params.require(:lesson_create).permit(:lesson_id, :card_title, :name, :file_type, :start_date, :finish_datem, :times)
   end
-
 end

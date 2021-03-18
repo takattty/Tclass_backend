@@ -27,5 +27,4 @@ class Api::V1::ReportController < ApplicationController
   def set_report
     params.require(:report_update).permit(:lesson_id, :report_id, :account_id, :submitted_date, :comment, :score)
   end
-
 end

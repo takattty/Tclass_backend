@@ -46,5 +46,4 @@ class Api::V1::CalendarController < ApplicationController
   def get_userid
     @user_id = params[:id]
   end
-  
 end

@@ -1,11 +1,10 @@
 class Api::V1::TaskController < ApplicationController
-  before_action :get_id
+  before_action :get_id, only: [:show]
   before_action :set_task, only: [:create]
 
   def show
     task = Report.find(@report_id)
     render json: { status: "SUCCESS", task_data: { lesson_id: @lesson_id, content: task } }
-    
   end
 
   def create
@@ -15,7 +14,6 @@ class Api::V1::TaskController < ApplicationController
     else
       render json: { status: "ERROR", data: task.errors }
     end
-
   end
 
   private
@@ -28,5 +26,4 @@ class Api::V1::TaskController < ApplicationController
   def set_task
     params.require(:task_create).permit(:lesson_id, :report_id, :user_id, :submitted_date, :comment, :score)
   end
-
 end
