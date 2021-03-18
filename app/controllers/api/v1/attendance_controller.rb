@@ -1,5 +1,6 @@
 class Api::V1::AttendanceController < ApplicationController
-  before_action :get_id, only: [:index, :create, :update]
+  before_action :get_lesson_id, only: [:index, :create, :update]
+  before_action :get_attendance_id, only: [:update]
   before_action :set_attendance, only: [:create]
   before_action :update_attendance, only: [:update]
 
@@ -28,8 +29,11 @@ class Api::V1::AttendanceController < ApplicationController
 
   private
 
-  def get_id
+  def get_lesson_id
     @lesson_id = params[:lesson_id]
+  end
+
+  def get_attendance_id
     @attendance_id = params[:id]
   end
 
