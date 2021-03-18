@@ -4,21 +4,13 @@ class Api::V1::AccountController < ApplicationController
   before_action :set_account, only: [:create]
 
   def index
-    # p request.headers.sort.map { |k, v| logger.info "#{k}:#{v}" }
-    # requests = request.headers
-    # p requests.class
-    # p request.headers[:HTTP_AUTHORIZATION]
-    # # p user_info_bearer.class
-    # # user_info_hash = user_info_bearer.to_h
-    # # p user_info_hash.class
-    # # p user_info
-    @account = Account.where('email = ?', @user_email).to_a
-    render json: { status: 200, data: @account }
+    account = Account.find_by(email: @user_email)
+    render json: { status: "SUCCESS", data: account }
   end
 
   def show
     account = Account.find(@account_id)
-    render json: { status: 200, data: account }
+    render json: { status: "SUCCESS", data: account }
   end
 
   def create

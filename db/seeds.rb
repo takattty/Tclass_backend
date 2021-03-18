@@ -7,17 +7,17 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 30.times do |n|
-  account_status = n <=15 ? 'student' : 'teacher'
-  Account.create!( name: "taka#{n}", email: "taka#{n}", password: "password#{n}", password_confirmation: "password#{n}", account_status: account_status )
+  account_status = n < 15 ? 'student' : 'teacher'
+  Account.create!( name: "taka#{n+1}", email: "taka#{n+1}@email.com", password: "password#{n+1}", password_confirmation: "password#{n+1}", account_status: account_status )
 end
 
 38.times do |n|
-  Lesson.create!( name: "lesson#{n}" )
+  Lesson.create!( name: "lesson#{n+1}" )
 end
 
 30.times do |n|
   8.times do |m|
-    AccountLesson.create!( account_id: n, lesson_id: "#{n + m}" )
+    AccountLesson.create!( account_id: "#{n+1}", lesson_id: "#{m+1} " )
   end
 end
 
